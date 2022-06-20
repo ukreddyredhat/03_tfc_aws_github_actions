@@ -27,6 +27,6 @@ resource "aws_instance" "webapp" {
   }
 }
 
-output "aws_instance"  {
+output "aws_instance" {
   value = aws_instance.webapp.public_ip
 }
