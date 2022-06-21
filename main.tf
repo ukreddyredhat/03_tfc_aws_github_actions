@@ -22,10 +22,10 @@ resource "aws_instance" "webapp" {
   vpc_security_group_ids      = [aws_security_group.allow_tcp_ssh.id]
 
   tags = {
-    Name = "lomar-apache-instance"
-    app  = "webapp"
+    Name       = "lomar-apache-instance"
+    app        = "webapp"
     Department = "production"
-    Billable = "true"
+    Billable   = true
   }
 }
 
