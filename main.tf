@@ -16,14 +16,16 @@ data "hcp_packer_image" "eu-central-1" {
 
 resource "aws_instance" "webapp" {
   ami                         = data.hcp_packer_image.eu-central-1.cloud_image_id
-  instance_type               = "t2.micro"
+  instance_type               = "t2.medium"
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.default.id
   vpc_security_group_ids      = [aws_security_group.allow_tcp_ssh.id]
 
   tags = {
-    Name = "lomar-apache-instance"
-    app  = "webapp"
+    Name       = "lomar-apache-instance"
+    app        = "webapp"
+    Department = "production"
+    Billable   = true
   }
 }
 
