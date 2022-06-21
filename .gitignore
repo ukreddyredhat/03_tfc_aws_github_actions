@@ -39,5 +39,5 @@ terraform.rc
 tf-packer
 tf-packer.pub
 
-
+01.aws_creds.sh
 
